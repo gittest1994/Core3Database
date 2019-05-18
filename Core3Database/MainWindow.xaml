@@ -16,45 +16,51 @@
             <ColumnDefinition/>
             <ColumnDefinition Width="3*"/>
         </Grid.ColumnDefinitions>
-        <controls:SideMenu BorderThickness="1" BorderBrush="{DynamicResource RegionBrush}">
-            <i:Interaction.Triggers>
-                <i:EventTrigger EventName="SelectionChanged">
-                    <command:EventToCommand Command="{Binding OpenViewCMD}" PassEventArgsToCommand="True"/>
-                </i:EventTrigger>
-            </i:Interaction.Triggers>
-            <controls:SideMenuItem Header="Home">
-                <controls:SideMenuItem.Icon>
-                    <Image Source="/Core3Database;component/Resources/DevOps-Boards.png" Width="24" Height="24"/>
-                </controls:SideMenuItem.Icon>
-                <controls:SideMenuItem Header="Add User">
+        <Border Margin="5,5,0,0" BorderBrush="Gray" BorderThickness="1">
+            <controls:SideMenu BorderThickness="1" BorderBrush="{DynamicResource RegionBrush}">
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="SelectionChanged">
+                        <command:EventToCommand Command="{Binding OpenViewCMD}" PassEventArgsToCommand="True"/>
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+                <controls:SideMenuItem Header="Home">
                     <controls:SideMenuItem.Icon>
                         <Image Source="/Core3Database;component/Resources/DevOps-Boards.png" Width="24" Height="24"/>
                     </controls:SideMenuItem.Icon>
+                    <controls:SideMenuItem Header="Add User">
+                        <controls:SideMenuItem.Icon>
+                            <Image Source="/Core3Database;component/Resources/DevOps-Boards.png" Width="24" Height="24"/>
+                        </controls:SideMenuItem.Icon>
+                    </controls:SideMenuItem>
+                    <controls:SideMenuItem Header="Edit User">
+                        <controls:SideMenuItem.Icon>
+                            <Image Source="/Core3Database;component/Resources/DevOps-Overview.png" Width="24" Height="24"/>
+                        </controls:SideMenuItem.Icon>
+                    </controls:SideMenuItem>
                 </controls:SideMenuItem>
-                <controls:SideMenuItem Header="Edit User">
-                    <controls:SideMenuItem.Icon>
-                        <Image Source="/Core3Database;component/Resources/DevOps-Overview.png" Width="24" Height="24"/>
-                    </controls:SideMenuItem.Icon>
-                </controls:SideMenuItem>
-            </controls:SideMenuItem>
 
 
-            <controls:SideMenuItem Header="Get Data">
-                <controls:SideMenuItem.Icon>
-                    <Image Source="/Core3Database;component/Resources/DevOps-Repos.png" Width="24" Height="24"/>
-                </controls:SideMenuItem.Icon>
-                <controls:SideMenuItem Header="View Data">
-                    <controls:SideMenuItem.Icon>
-                        <Image Source="/Core3Database;component/Resources/DevOps-Pipelines.png" Width="24" Height="24"/>
-                    </controls:SideMenuItem.Icon>
-                </controls:SideMenuItem>
-                <controls:SideMenuItem Header="Delete User">
+                <controls:SideMenuItem Header="Get Data">
                     <controls:SideMenuItem.Icon>
                         <Image Source="/Core3Database;component/Resources/DevOps-Repos.png" Width="24" Height="24"/>
                     </controls:SideMenuItem.Icon>
+                    <controls:SideMenuItem Header="View Data">
+                        <controls:SideMenuItem.Icon>
+                            <Image Source="/Core3Database;component/Resources/DevOps-Pipelines.png" Width="24" Height="24"/>
+                        </controls:SideMenuItem.Icon>
+                    </controls:SideMenuItem>
+                    <controls:SideMenuItem Header="Delete User">
+                        <controls:SideMenuItem.Icon>
+                            <Image Source="/Core3Database;component/Resources/DevOps-Repos.png" Width="24" Height="24"/>
+                        </controls:SideMenuItem.Icon>
+                    </controls:SideMenuItem>
                 </controls:SideMenuItem>
-            </controls:SideMenuItem>
-        </controls:SideMenu>
-        <ContentControl Grid.Column="1" x:Name="content"/>
+            </controls:SideMenu>
+
+        </Border>
+        <ContentControl Margin="5,5,5,0" Grid.Column="1" x:Name="content"/>
+        <controls:ScrollViewer Grid.Column="1" VerticalScrollBarVisibility="Hidden" HorizontalAlignment="Right">
+            <StackPanel controls:Growl.GrowlParent="True" VerticalAlignment="Top"/>
+        </controls:ScrollViewer>
     </Grid>
 </controls:BlurWindow>

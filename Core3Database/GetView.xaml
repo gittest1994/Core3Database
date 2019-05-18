@@ -5,8 +5,20 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Core3Database"
              mc:Ignorable="d" 
+             xmlns:controls="clr-namespace:HandyControl.Controls;assembly=HandyControl"
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-            
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="7*"/>
+        </Grid.RowDefinitions>
+        <controls:SearchBar Name="txtSearch" Margin="10" IsRealTime="True" SearchStarted="SearchBar_SearchStarted" controls:InfoElement.Placeholder="Search..." Style="{StaticResource SearchBarExtend}"/>
+        <DataGrid Grid.Row="1" controls:DataGridAttach.ShowRowNumber="True" x:Name="dgv" AutoGenerateColumns="False" HeadersVisibility="All" IsReadOnly="True" SelectionMode="Single" Grid.Column="1">
+            <DataGrid.Columns>
+                <DataGridTextColumn Visibility="Collapsed" Header="Id" Binding="{Binding Id}"/>
+                <DataGridTextColumn Header="Name" Binding="{Binding Name}"/>
+                <DataGridTextColumn Header="LName" Binding="{Binding LName}"/>
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </UserControl>

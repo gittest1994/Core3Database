@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HandyControl.Controls;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -35,5 +36,12 @@ namespace Core3Database
             content.Content = userControl;
         }
        
+        public void showNotification(bool isError, string Message)
+        {
+            if(isError)
+                Growl.Error(Message);
+            else
+                Growl.Info(Message);
+        }
     }
 }

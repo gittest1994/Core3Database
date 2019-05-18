@@ -5,8 +5,15 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Core3Database"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             xmlns:controls="clr-namespace:HandyControl.Controls;assembly=HandyControl"
+             d:DesignHeight="500" d:DesignWidth="800">
     <Grid>
-            
+        <StackPanel>
+            <TextBox x:Name="txtName" Style="{StaticResource TextBoxExtend}" controls:InfoElement.Placeholder="Enter your name..." Margin="10"/>
+            <TextBox x:Name="txtLName" Style="{StaticResource TextBoxExtend}" controls:InfoElement.Placeholder="Enter your Lname..." Margin="10"/>
+            <Image x:Name="imgProfile" Margin="10" HorizontalAlignment="Left" Width="256" Height="256"/>
+            <Button Click="BtnLoad_Click" Content="Browse" Name="btnLoad" HorizontalAlignment="Left" Margin="10" Width="256"/>
+            <Button Click="BtnSave_Click" Content="Save" Name="btnSave" HorizontalAlignment="Center" Margin="10" Width="256"/>
+        </StackPanel>  
     </Grid>
 </UserControl>
