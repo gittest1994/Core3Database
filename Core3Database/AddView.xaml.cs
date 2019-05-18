@@ -38,7 +38,7 @@ namespace Core3Database
             var db = new mydbContext();
             var data = new tbl_Users
             {
-                Name = name,
+                NameX = name,
                 LName = lname,
                 Profile = profile
             };

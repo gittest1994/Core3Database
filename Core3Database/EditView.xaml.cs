@@ -85,7 +85,7 @@ namespace Core3Database
         {
             var db = new mydbContext();
             var edit = await db.tbl_Users.FindAsync(id);
-            edit.Name = name;
+            edit.NameX = name;
             edit.LName = lname;
             edit.Profile = profile;
             await db.SaveChangesAsync();

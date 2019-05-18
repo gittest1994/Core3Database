@@ -8,7 +8,6 @@ namespace Core3Database
 {
     public class mydbContext : DbContext
     {
-        public DbSet<tbl_Login> tbl_Logins { get; set; }
         public DbSet<tbl_Users> tbl_Users { get; set; }
 
         public mydbContext()
@@ -17,7 +16,13 @@ namespace Core3Database
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            base.OnConfiguring(optionsBuilder.UseSqlite("Data source = db.db"));
+            string connectionString = @"Data source = |DataDirectory|\db.db";
+            var builder = new SqliteConnectionStringBuilder(connectionString);
+            builder.DataSource = builder.DataSource.Replace(@"|DataDirectory|\", AppDomain.CurrentDomain.GetData("DataDirectory") as string);
+            connectionString = builder.ToString();
+
+            base.OnConfiguring(optionsBuilder.UseSqlite(connectionString));
+
         }
     }
 }

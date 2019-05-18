@@ -41,7 +41,7 @@ namespace Core3Database
         {
             using (var db = new mydbContext())
             {
-                dgv.ItemsSource = db.tbl_Users.Where(x => x.Name.Contains(txtSearch.Text) || x.LName.Contains(txtSearch.Text)).Select(x=>x).ToList();
+                dgv.ItemsSource = db.tbl_Users.Where(x => x.NameX.Contains(txtSearch.Text) || x.LName.Contains(txtSearch.Text)).Select(x=>x).ToList();
             }
         }
 

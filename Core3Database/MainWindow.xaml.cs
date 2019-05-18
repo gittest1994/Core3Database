@@ -1,4 +1,5 @@
 ﻿using HandyControl.Controls;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -29,6 +30,8 @@ namespace Core3Database
         {
             InitializeComponent();
             main = this;
+            var db = new mydbContext();
+            db.Database.Migrate();
         }
 
         public void ChangeContent(UserControl userControl)

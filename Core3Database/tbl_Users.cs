@@ -10,7 +10,7 @@ namespace Core3Database
     {
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
-        public string Name { get; set; }
+        public string NameX { get; set; }
         public string LName { get; set; }
         public byte[] Profile { get; set; }
     }
