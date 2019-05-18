@@ -1,0 +1,81 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <AssemblyVersion>1.0.2.0</AssemblyVersion>
+    <FileVersion>1.0.2.0</FileVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="AddView.xaml" />
+    <None Remove="EditView.xaml" />
+    <None Remove="GetView.xaml" />
+    <None Remove="Resources\DevOps-Boards.png" />
+    <None Remove="Resources\DevOps-Overview.png" />
+    <None Remove="Resources\DevOps-Pipelines.png" />
+    <None Remove="Resources\DevOps-Repos.png" />
+    <None Remove="Resources\DevOps-TestPlans.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="HandyControl" Version="1.5.5" />
+    <PackageReference Include="MvvmLightLibs" Version="5.4.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\DevOps-Boards.png" />
+    <Resource Include="Resources\DevOps-Overview.png" />
+    <Resource Include="Resources\DevOps-Pipelines.png" />
+    <Resource Include="Resources\DevOps-Repos.png" />
+    <Resource Include="Resources\DevOps-TestPlans.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ApplicationDefinition Update="App.xaml">
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="AddView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="EditView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="GetView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="AddView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="EditView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="GetView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+
+</Project>
